@@ -1,0 +1,16 @@
+{
+  "name": "czkawka-web",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "serve": "CZKAWKA_BIN=${CZKAWKA_BIN:-$PWD/build/czkawka/target/release/czkawka_cli} bun run --hot packages/web/src/index.tsx",
+    "serve:docker": "docker run --rm -it --init -p 3000:3000 -v \"${STORAGE_PATH:-$PWD}:/storage\" czkawka-web",
+    "build:czkawka": "bash tools/build-czkawka.sh",
+    "build:docker": "docker build -f tools/Dockerfile -t czkawka-web .",
+    "deploy": "bash tools/deploy.sh",
+    "seed": "bun tools/seed-storage.ts"
+  },
+  "devDependencies": {
+    "bun-types": "^1.3.13"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@czkawka/core",
+  "module": "src/index.ts",
+  "type": "module",
+  "dependencies": {
+    "zod": "latest"
+  }
+}

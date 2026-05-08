@@ -1,0 +1,6 @@
+# Image will be pushed as $DOCKER_USER/$IMAGE_NAME.
+export DOCKER_USER=YOUR_DOCKER_USER
+export IMAGE_NAME=czkawka-web
+
+# Allow pushing to the registry from a dirty working tree
+# export ALLOW_DIRTY=1

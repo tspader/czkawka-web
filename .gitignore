@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.envrc
+.direnv/
+/build
+
+# Manual-test fixtures.
+tools/storage/
+
+# Test artifacts.
+.playwright-cli/
+/.llm

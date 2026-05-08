@@ -1,0 +1,15 @@
+{
+  "name": "@czkawka/web",
+  "module": "src/index.tsx",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.tsx",
+    "build:docker": "bun build --compile --target=bun-linux-x64-musl src/index.tsx --outfile=dist/czkawka-web"
+  },
+  "dependencies": {
+    "@czkawka/core": "workspace:*",
+    "hono": "latest",
+    "htmx.org": "latest",
+    "zod": "latest"
+  }
+}
