@@ -34,17 +34,16 @@
   --fg-faintest:    #444;
   --fg-disabled:    #777;
 
-  --accent:         #2563eb;
-  --accent-hover:   #1d4ed8;
-  --accent-fg:      #93c5fd;
-  --success:        #4ade80;
+  --accent:         #4D7298;
+  --accent-hover:   #2a4a6b;
+  --accent-fg:      #e0e0e0;
+  --success:        #4abd74;
   --warning:        #fbbf24;
   --warning-soft:   rgba(251,191,36,0.08);
   --warning-border: rgba(251,191,36,0.20);
   --success-border: rgba(74,222,128,0.20);
   --success-bg:     rgba(74,222,128,0.08);
-  --danger:         #f87171;
-  --danger-2:       #c97777;
+  --danger:         #db5461;
   --danger-soft:    #f5b8b8;
 
   /* Type */
@@ -97,7 +96,8 @@ body {
 header {
   padding: var(--s-5) var(--s-9);
   border-bottom: 1px solid var(--border-1);
-  display: flex; align-items: center; gap: var(--s-7);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--s-7);
 }
 
 .logo {
@@ -105,6 +105,17 @@ header {
   color: var(--fg-strong); text-decoration: none;
   letter-spacing: -0.5px;
 }
+
+.header-links {
+  display: flex; align-items: center; gap: var(--s-3);
+  font-size: var(--text-sm);
+}
+.header-links a {
+  color: var(--fg-1); text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.header-links a:hover { color: var(--fg-1); }
+.header-link-sep { color: var(--fg-strong); }
 
 main {
   padding: var(--s-9);
@@ -207,7 +218,6 @@ button[type=submit][disabled] { opacity: 0.5; cursor: default; }
 }
 
 .path-list-add {
-  display: flex; align-items: center; justify-content: center;
   padding: var(--s-3);
   border-radius: var(--r-sm);
   background: transparent;
@@ -277,7 +287,7 @@ button[type=submit][disabled] { opacity: 0.5; cursor: default; }
 }
 .sort-select {
   background: var(--bg-input); border: 1px solid var(--border-2);
-  border-radius: 5px; color: var(--fg-2);
+  border-radius: 5px; color: var(--fg-1);
   padding: 5px var(--s-4); font-size: var(--text-sm); width: auto;
 }
 
@@ -348,7 +358,7 @@ button[type=submit][disabled] { opacity: 0.5; cursor: default; }
 .dup-file.dup-keep:hover { background: var(--bg-success-mid); }
 
 .dup-marker {
-  font-size: var(--text-sm); color: var(--fg-fainter);
+  font-size: var(--text-xs); color: var(--fg-fainter);
   text-transform: uppercase; letter-spacing: var(--label-tracking);
 }
 .dup-keep .dup-marker { color: var(--success); font-weight: 600; }
@@ -384,16 +394,16 @@ button[type=submit][disabled] { opacity: 0.5; cursor: default; }
   padding: var(--s-1) var(--s-5);
   font-size: var(--text-xs);
 }
-.btn-primary { color: var(--fg-2); }
-.btn-primary:hover { border-color: var(--accent); color: var(--accent-fg); background: var(--bg-accent-mid); }
-.btn-danger  { color: var(--danger-2); }
+.btn-primary { color: var(--fg-1); }
+.btn-primary:hover { border-color: var(--accent); color: var(--fg-1); background: var(--bg-accent-mid); }
+.btn-danger  { color: var(--danger); }
 .btn-danger:hover  { border-color: var(--danger); color: var(--danger); background: var(--bg-danger); }
 .btn-ghost   { color: var(--fg-fainter); border-color: transparent; padding: var(--s-1) var(--s-3); }
 .btn-ghost:hover   { color: var(--fg-5); border-color: var(--border-2); }
 
 /* Medium (bulk action / cancel) */
-.btn-bulk-hardlink, .btn-bulk-danger { padding: var(--s-2) var(--s-5); font-size: var(--text-sm); color: var(--fg-2); }
-.btn-bulk-hardlink:hover { border-color: var(--accent); color: var(--accent-fg); }
+.btn-bulk-hardlink, .btn-bulk-danger { padding: var(--s-2) var(--s-5); font-size: var(--text-sm); color: var(--fg-1); }
+.btn-bulk-hardlink:hover { border-color: var(--accent); }
 .btn-bulk-danger { color: var(--danger); }
 .btn-bulk-danger:hover { border-color: var(--danger); background: var(--bg-danger); }
 
@@ -420,10 +430,10 @@ button[type=submit][disabled] { opacity: 0.5; cursor: default; }
   background: var(--bg-card);
   border: 1px dashed var(--border-2);
   border-radius: var(--r-lg);
-  color: var(--fg-2); font-size: var(--text-md); cursor: pointer;
+  color: var(--fg-1); font-size: var(--text-md); cursor: pointer;
   transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
 }
-.btn-load-more:hover { border-color: var(--accent); color: var(--accent-fg); background: var(--bg-accent-soft); }
+.btn-load-more:hover { border-color: var(--accent); color: var(--fg-1); background: var(--bg-accent-soft); }
 .btn-load-more-meta { color: var(--fg-faint); font-size: var(--text-xs); }
 .htmx-request.btn-load-more, .btn-load-more.htmx-request { opacity: 0.6; cursor: wait; }
 
@@ -457,7 +467,7 @@ button[type=submit][disabled] { opacity: 0.5; cursor: default; }
   cursor: pointer; white-space: nowrap;
 }
 .more-menu-item:hover { background: var(--bg-row-hover); }
-.more-menu-item-danger { color: var(--danger-2); }
+.more-menu-item-danger { color: var(--danger); }
 .more-menu-item-danger:hover { background: var(--bg-danger); color: var(--danger); }
 
 /* ─── Bulk action summary ───────────────────────────────────────────── */

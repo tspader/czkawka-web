@@ -13,6 +13,11 @@ export const Layout: FC<PropsWithChildren<{ title?: string }>> = ({ title = "Czk
     <body>
       <header>
         <a href="/" class="logo">czkawka</a>
+        <nav class="header-links">
+          <a href="https://spader.zone/" target="_blank" rel="noopener noreferrer">blog</a>
+          <span class="header-link-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/tspader/czkawka-web" target="_blank" rel="noopener noreferrer">github</a>
+        </nav>
       </header>
       <main>{children}</main>
 

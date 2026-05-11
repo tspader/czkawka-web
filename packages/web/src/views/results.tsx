@@ -296,7 +296,7 @@ export function DupSummary({ scan, oob }: { scan: ScanState; oob?: boolean }) {
           hx-target="#dup-results-root"
           hx-swap="outerHTML"
         >
-          Hardlink all groups
+          Hardlink
         </button>
         <button
           class="btn-bulk-danger"
@@ -306,7 +306,7 @@ export function DupSummary({ scan, oob }: { scan: ScanState; oob?: boolean }) {
           hx-target="#dup-results-root"
           hx-swap="outerHTML"
         >
-          Delete all extras
+          Delete extras
         </button>
       </div>
     </div>
